@@ -51,7 +51,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: flask-app
+    app: flaskr-app
   ports:
     - protocol: TCP
       port: 5000         # Exposes the service on port 5000
