@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flaskr-app
-        image: shradha11/flaskapp:0.4
+        image: shradha11/flaskapp:0.3
         #image: ashutosh04/blogapp:<IMAGE_TAG>
         ports:
         - containerPort: 5000
@@ -40,3 +40,19 @@ spec:
       # By default and for convenience, the Kubernetes control plane
       # will allocate a port from a range (default: 30000-32767)
       nodePort: 30007
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service-b
+spec:
+  type: LoadBalancer
+  selector:
+    app: flask-app
+  ports:
+    - protocol: TCP
+      port: 5000         # Exposes the service on port 5000
+      targetPort: 5000   # Forwards to the container's port
