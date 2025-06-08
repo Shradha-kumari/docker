@@ -1,6 +1,7 @@
 FROM python:3.11-slim
-COPY hello.py hello.py
+WORKDIR /app
+COPY . /app/
 RUN pip install Flask
 EXPOSE 5000
-CMD ["python", "hello.py"]
-#CMD ["flask", "--app", "hello", "run"]
+#CMD ["python", "hello.py"]
+CMD ["flask", "--app", "hello", "run"]
