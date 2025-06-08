@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . /app/
 RUN pip install Flask
 EXPOSE 5000
-CMD ["python", "hello.py"]
+#CMD ["python", "hello.py"]
+CMD ["flask", "--app", "hello", "run"]
