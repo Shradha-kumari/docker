@@ -4,4 +4,4 @@ COPY . /app/
 RUN pip install Flask
 EXPOSE 5000
 #CMD ["python", "hello.py"]
-CMD ["flask", "--app", "hello", "run"]
+CMD ["flask", "--app", "hello", "run","--host=0.0.0.0"]
