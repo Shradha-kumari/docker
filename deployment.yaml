@@ -44,15 +44,15 @@ spec:
 
 ---
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: flask-service-b
-spec:
-  type: LoadBalancer
-  selector:
-    app: flaskr-app
-  ports:
-    - protocol: TCP
-      port: 5000         # Exposes the service on port 5000
-      targetPort: 5000   # Forwards to the container's port
+#apiVersion: v1
+#kind: Service
+#metadata:
+  #name: flask-service-b
+#spec:
+  #type: LoadBalancer
+  #selector:
+    #app: flaskr-app
+  #ports:
+    #- protocol: TCP
+      #port: 5000         # Exposes the service on port 5000
+      #targetPort: 5000   # Forwards to the container's port
