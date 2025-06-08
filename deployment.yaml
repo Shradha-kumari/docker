@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        #image: shradha11/flaskapp:0.3
-        image: ashutosh04/blogapp:0.28
+        image: shradha11/flaskapp:0.3
         imagePullPolicy: Always 
         ports:
         - containerPort: 5000
