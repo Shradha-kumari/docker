@@ -22,7 +22,7 @@ spec:
         - containerPort: 5000
         env:
             - name: FLASK_ENV
-              value: "development"
+              value: "stage"
             #- name: CUSTOM_MESSAGE
              # value: "Hello from K8s!"
         volumeMounts:
