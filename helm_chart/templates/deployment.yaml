@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flaskr-app
+  name: {{ .Values.name }}
   labels:
-    app: flaskr-app
+    app: {{ .Values.name }}
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flaskr-app
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: flaskr-app
+        app: {{ .Values.name }}
     spec:
       containers:
-      - name: flaskr-app
-        image: shradha11/flaskapp:0.6
+      - name: {{ .Values.name }}
+        image: shradha11/flaskapp:{{ .Values.image_tag }}
         #image: ashutosh04/blogapp:<IMAGE_TAG>
         ports:
         - containerPort: 5000
