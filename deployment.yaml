@@ -23,8 +23,8 @@ spec:
         env:
             - name: FLASK_ENV
               value: "development"
-            - name: CUSTOM_MESSAGE
-              value: "Hello from K8s!"
+            #- name: CUSTOM_MESSAGE
+             # value: "Hello from K8s!"
 ---
 
 apiVersion: v1
