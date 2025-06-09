@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskr-app
+  labels:
+    app: flaskr-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flaskr-app
+  template:
+    metadata:
+      labels:
+        app: flaskr-app
+    spec:
+      containers:
+      - name: flaskr-app
+        image: shradha11/flaskapp:0.6
+        #image: ashutosh04/blogapp:<IMAGE_TAG>
+        ports:
+        - containerPort: 5000
+        env:
+            - name: FLASK_ENV
+              value: "stage"
+            - name: CUSTOM_MESSAGE
+              value: "Hello from K8s!"
+        volumeMounts:
+        - name: app-data
+          mountPath: /data   # This path will exist in the container
+      volumes:
+      - name: app-data
+        emptyDir: {} 
