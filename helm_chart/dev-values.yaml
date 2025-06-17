@@ -4,3 +4,14 @@ port: 30007
 env: <+pipeline.variables.env>
 secretName: my-secret
 secretMountPath: /etc/secrets
+readinessProbe:
+  enabled: true
+  path: /healthz
+  port: 5000
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 2
+  failureThreshold: 3
+  successThreshold: 1
+
+
