@@ -13,5 +13,9 @@ readinessProbe:
   timeoutSeconds: 2
   failureThreshold: 3
   successThreshold: 1
+sidecar:
+  image: busybox
+  command: ["sh", "-c", "while true; do echo hello; sleep 10;done"]
+
 
 

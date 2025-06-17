@@ -49,6 +49,7 @@ spec:
       - name: app-secret
         secret:
           secretName: {{ .Values.secretName }}
-      - name: sidecar-logger
-          image: busybox
-          args: ["/bin/sh", "-c", "while true; do echo sidecar log; sleep 5; done"]
+      - name: sidecar
+          image: "{{ .Values.sidecar.image }}"
+          ports:
+            - containerPort: 5000
