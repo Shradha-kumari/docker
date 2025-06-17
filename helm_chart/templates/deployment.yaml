@@ -43,14 +43,16 @@ spec:
           - name: app-secret
             mountPath: {{ .Values.secretMountPath }}
             readOnly: true
+      - name: sidecar
+        image: "{{ .Values.sidecar.image }}"
+        ports:
+        - containerPort: 5000
+
       volumes:
         - name: app-data
           emptyDir: {} 
         - name: app-secret
           secret:
             secretName: {{ .Values.secretName }}
-      - name: sidecar
-          image: "{{ .Values.sidecar.image }}"
-          ports:
-            - containerPort: 5000
+      
       
