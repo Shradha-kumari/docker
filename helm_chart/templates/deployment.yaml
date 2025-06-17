@@ -15,6 +15,10 @@ spec:
         app: {{ .Values.name }}
     spec:
       containers:
+      - name: sidecar
+          image: "{{ .Values.sidecar.image }}"
+          ports:
+            - containerPort: 5000
       - name: {{ .Values.name }}
         image: shradha11/flaskapp:{{ .Values.image_tag }}
         #image: ashutosh04/blogapp:<IMAGE_TAG>
@@ -49,7 +53,4 @@ spec:
       - name: app-secret
         secret:
           secretName: {{ .Values.secretName }}
-      - name: sidecar
-          image: "{{ .Values.sidecar.image }}"
-          ports:
-            - containerPort: 5000
+      
