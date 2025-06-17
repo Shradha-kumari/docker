@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.name }}-config
 data:
-  APP_ENV: production
-  LOG_LEVEL: debug
+  APP_ENV: devlopment
+  bucketName: test_cf_1234
