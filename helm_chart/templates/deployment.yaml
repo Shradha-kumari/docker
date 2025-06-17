@@ -25,6 +25,9 @@ spec:
               value: "stage"
             - name: CUSTOM_MESSAGE
               value: "Hello from K8s!"
+        envFrom:
+            - configMapRef:
+                name: {{ .Values.name }}-config
         volumeMounts:
         - name: app-data
           mountPath: /data   # This path will exist in the container
