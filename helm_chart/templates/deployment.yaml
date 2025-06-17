@@ -31,6 +31,12 @@ spec:
         volumeMounts:
         - name: app-data
           mountPath: /data   # This path will exist in the container
+        - name: app-secret
+          mountPath: {{ .Values.secretMountPath }}
+          readOnly: true
       volumes:
       - name: app-data
         emptyDir: {} 
+      - name: app-secret
+        secret:
+          secretName: {{ .Values.secretName }}
