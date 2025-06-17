@@ -1,3 +1,4 @@
 name: "qa-flaskapp"
 image_tag: 0.6
 port: 30008
+env: <+pipeline.variables.env>

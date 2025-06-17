@@ -1,3 +1,4 @@
+{{- if eq .Values.env "dev" }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -5,3 +6,4 @@ metadata:
 data:
   APP_ENV: devlopment
   bucketName: test_cf_1234
+{{- end }}

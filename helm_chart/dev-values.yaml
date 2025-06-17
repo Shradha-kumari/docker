@@ -1,4 +1,4 @@
 name: "dev-flaskapp"
 image_tag: 0.6
 port: 30007
-
+env: <+pipeline.variables.env>
