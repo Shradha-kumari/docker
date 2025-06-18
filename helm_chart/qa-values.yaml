@@ -14,5 +14,5 @@ readinessProbe:
   failureThreshold: 3
   successThreshold: 1
 sidecar:
-  image: busybox
+  image: nginx
   command: ["sh", "-c", "while true; do echo hello; sleep 10;done"]
