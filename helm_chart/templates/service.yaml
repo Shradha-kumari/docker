@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Values.name }}
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: {{ .Values.name }}
   ports:
@@ -14,4 +14,4 @@ spec:
       # Optional field
       # By default and for convenience, the Kubernetes control plane
       # will allocate a port from a range (default: 30000-32767)
-      nodePort: {{ .Values.port }}
+      #nodePort: {{ .Values.port }}
